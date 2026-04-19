@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Faith That Moves Mountains — Manifest Your Dream Life</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C9A84C;
+    --gold-light: #E8D5A3;
+    --gold-pale: #FAF4E6;
+    --deep: #0E0E12;
+    --deep2: #18181F;
+    --deep3: #22222C;
+    --text: #F2EFE8;
+    --text-muted: #9E9B93;
+    --accent: #7B6EC6;
+    --border: rgba(201,168,76,0.18);
+    --radius: 12px;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--deep);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  /* ─── NAV ─────────────────────────────── */
+  nav {
+    position: fixed; top:0; left:0; right:0; z-index:100;
+    background: rgba(14,14,18,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 0.5px solid var(--border);
+    padding: 0 2rem;
+    height: 60px;
+    display: flex; align-items:center; justify-content:space-between;
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--gold);
+    letter-spacing: 0.04em;
+  }
+  .nav-links { display:flex; gap:2rem; }
+  .nav-links a {
+    color: var(--text-muted);
+    text-decoration:none;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.03em;
+    transition: color .2s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+
+  /* ─── SECTIONS ───────────────────────── */
+  .section { display:none; padding-top: 60px; min-height: 100vh; }
+  .section.active { display:block; }
+
+  /* ─── HERO ────────────────────────────── */
+  #hero {
+    flex-direction:column;
+    align-items:center; justify-content:center;
+    min-height: 100vh;
+    text-align:center;
+    padding: 80px 2rem 4rem;
+    position: relative;
+    overflow:hidden;
+  }
+  #hero.active { display:flex; }
+  .hero-orb {
+    position:absolute; top:-20%; left:50%; transform:translateX(-50%);
+    width:600px; height:600px; border-radius:50%;
+    background: radial-gradient(circle, rgba(201,168,76,0.07) 0%, transparent 70%);
+    pointer-events:none;
+  }
+  .hero-tag {
+    display:inline-block;
+    border: 0.5px solid var(--border);
+    padding: 6px 18px;
+    border-radius: 40px;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 2.5rem;
+  }
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.6rem, 6vw, 5rem);
+    font-weight: 300;
+    line-height: 1.12;
+    letter-spacing: -0.01em;
+    max-width: 800px;
+    margin-bottom: 1.75rem;
+  }
+  h1 em { color: var(--gold); font-style: italic; }
+  .hero-sub {
+    max-width: 580px;
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.75;
+    margin-bottom: 3rem;
+  }
+  .btn-primary {
+    display:inline-block;
+    background: var(--gold);
+    color: #0E0E12;
+    padding: 14px 36px;
+    border-radius: 40px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    cursor:pointer;
+    border:none;
+    transition: transform .2s, box-shadow .2s;
+    text-decoration:none;
+  }
+  .btn-primary:hover { transform:translateY(-2px); box-shadow: 0 8px 24px rgba(201,168,76,0.28); }
+  .btn-ghost {
+    display:inline-block;
+    border: 0.5px solid var(--border);
+    color: var(--text-muted);
+    padding: 14px 36px;
+    border-radius: 40px;
+    font-size: 14px;
+    font-weight: 400;
+    cursor:pointer;
+    background:none;
+    transition: border-color .2s, color .2s;
+    text-decoration:none;
+    margin-left: 1rem;
+  }
+  .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+
+  .stats-row {
+    display:flex; gap:4rem; margin-top: 5rem;
+    border-top: 0.5px solid var(--border);
+    padding-top: 2.5rem;
+  }
+  .stat { text-align:center; }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: var(--gold);
+    line-height:1;
+  }
+  .stat-label { font-size:12px; color: var(--text-muted); letter-spacing:0.06em; text-transform:uppercase; margin-top:4px; }
+
+  /* ─── MODULES PAGE ───────────────────── */
+  #modules { padding: 80px 2rem 4rem; }
+  .page-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 300;
+    text-align:center;
+    margin-bottom: 0.75rem;
+  }
+  .page-title em { color: var(--gold); font-style:italic; }
+  .page-subtitle { text-align:center; color: var(--text-muted); margin-bottom: 3.5rem; max-width:520px; margin-left:auto; margin-right:auto; }
+
+  .modules-grid {
+    display:grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .module-card {
+    background: var(--deep2);
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    cursor:pointer;
+    transition: border-color .25s, transform .25s;
+    position: relative;
+    overflow:hidden;
+  }
+  .module-card::before {
+    content:'';
+    position:absolute; top:0; left:0; right:0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    opacity:0;
+    transition: opacity .3s;
+  }
+  .module-card:hover { border-color: rgba(201,168,76,0.4); transform:translateY(-3px); }
+  .module-card:hover::before { opacity:1; }
+  .module-card.locked { opacity:0.5; cursor:not-allowed; }
+  .module-card.completed { border-color: rgba(201,168,76,0.35); }
+  .module-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 300;
+    color: var(--border);
+    line-height:1;
+    margin-bottom: 0.5rem;
+  }
+  .module-card.completed .module-num { color: var(--gold); opacity:0.4; }
+  .module-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+    color: var(--text);
+  }
+  .module-desc { font-size:13px; color: var(--text-muted); line-height:1.6; margin-bottom: 1rem; }
+  .module-meta { display:flex; align-items:center; gap:1rem; }
+  .badge {
+    font-size:11px; padding: 3px 10px; border-radius:20px;
+    background: rgba(201,168,76,0.12); color: var(--gold); letter-spacing:0.04em;
+  }
+  .badge.done { background: rgba(201,168,76,0.2); }
+  .badge.locked-badge { background: rgba(158,155,147,0.1); color: var(--text-muted); }
+  .duration { font-size:12px; color: var(--text-muted); }
+
+  /* ─── VIDEO PLAYER ───────────────────── */
+  #player { padding: 80px 2rem 4rem; }
+  .player-wrap { max-width: 860px; margin: 0 auto; }
+  .back-btn {
+    background:none; border:none; color: var(--text-muted); cursor:pointer;
+    font-size:13px; display:flex; align-items:center; gap:6px; margin-bottom:1.5rem;
+    transition: color .2s; padding:0;
+  }
+  .back-btn:hover { color: var(--gold); }
+  .video-box {
+    background: var(--deep2);
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius);
+    aspect-ratio: 16/9;
+    display:flex; flex-direction:column;
+    align-items:center; justify-content:center;
+    position:relative;
+    overflow:hidden;
+    margin-bottom: 1.5rem;
+  }
+  .video-thumbnail {
+    position:absolute; inset:0;
+    background: var(--deep3);
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    gap: 1.5rem;
+  }
+  .play-btn-large {
+    width:72px; height:72px; border-radius:50%;
+    background: var(--gold);
+    border:none; cursor:pointer;
+    display:flex; align-items:center; justify-content:center;
+    transition: transform .2s, box-shadow .2s;
+  }
+  .play-btn-large:hover { transform:scale(1.08); box-shadow: 0 0 30px rgba(201,168,76,0.4); }
+  .play-icon { width:0; height:0; border-top:12px solid transparent; border-bottom:12px solid transparent; border-left:20px solid #0E0E12; margin-left:4px; }
+
+  .video-progress-wrap { margin-bottom: 2rem; }
+  .video-progress-bar {
+    background: var(--deep3);
+    height:4px; border-radius:2px;
+    overflow:hidden; position:relative;
+    cursor:pointer;
+  }
+  .video-progress-fill {
+    background: var(--gold);
+    height:100%; border-radius:2px;
+    transition: width .5s;
+  }
+  .video-time { font-size:12px; color: var(--text-muted); margin-top:6px; display:flex; justify-content:space-between; }
+
+  .video-controls {
+    display:flex; align-items:center; gap:1rem;
+    background: var(--deep2);
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .ctrl-btn {
+    background:none; border: 0.5px solid var(--border);
+    color: var(--text-muted); padding:8px 16px; border-radius:20px;
+    cursor:pointer; font-size:13px; transition: all .2s;
+  }
+  .ctrl-btn:hover { border-color: var(--gold); color: var(--gold); }
+  .ctrl-btn.active-ctrl { background: var(--gold); color:#0E0E12; border-color: var(--gold); font-weight:500; }
+
+  .lesson-content {
+    background: var(--deep2);
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius);
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  .lesson-content h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem; font-weight: 400;
+    margin-bottom: 1rem; color: var(--text);
+  }
+  .lesson-content p { color: var(--text-muted); margin-bottom: 1rem; font-size:15px; }
+  .lesson-content ul { padding-left:1.25rem; color: var(--text-muted); font-size:15px; }
+  .lesson-content li { margin-bottom: 0.5rem; }
+  .key-insight {
+    border-left: 2px solid var(--gold);
+    padding: 1rem 1.25rem;
+    background: rgba(201,168,76,0.05);
+    border-radius: 0 8px 8px 0;
+    margin: 1.5rem 0;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style:italic;
+    color: var(--gold-light);
+    line-height:1.6;
+  }
+  .next-btn-wrap { display:flex; justify-content:flex-end; margin-top: 2rem; }
+
+  /* ─── QUIZ ────────────────────────────── */
+  #quiz { padding: 80px 2rem 4rem; }
+  .quiz-wrap { max-width: 700px; margin: 0 auto; }
+  .quiz-header { text-align:center; margin-bottom: 3rem; }
+  .progress-dots { display:flex; gap:6px; justify-content:center; margin-bottom: 2rem; }
+  .dot {
+    width:8px; height:8px; border-radius:50%;
+    background: var(--deep3);
+    border: 0.5px solid var(--border);
+    transition: background .3s;
+  }
+  .dot.answered { background: var(--gold); border-color: var(--gold); }
+  .dot.current { background: var(--accent); border-color: var(--accent); }
+
+  .q-card {
+    background: var(--deep2);
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius);
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  .q-num { font-size:12px; color: var(--text-muted); letter-spacing:0.08em; text-transform:uppercase; margin-bottom:0.75rem; }
+  .q-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem; font-weight: 400; line-height:1.5;
+    margin-bottom: 1.75rem;
+  }
+  .options { display:flex; flex-direction:column; gap:10px; }
+  .option {
+    display:flex; align-items:center; gap:14px;
+    background: var(--deep3);
+    border: 0.5px solid var(--border);
+    border-radius: 8px;
+    padding: 14px 18px;
+    cursor:pointer;
+    transition: border-color .2s, background .2s;
+    font-size:14px; color: var(--text);
+  }
+  .option:hover { border-color: rgba(201,168,76,0.4); background: rgba(201,168,76,0.05); }
+  .option.selected { border-color: var(--gold); background: rgba(201,168,76,0.08); }
+  .option.correct { border-color: #4CAF50; background: rgba(76,175,80,0.08); }
+  .option.wrong { border-color: #E24B4A; background: rgba(226,75,74,0.08); }
+  .opt-circle {
+    width:22px; height:22px; border-radius:50%; flex-shrink:0;
+    border: 0.5px solid var(--border);
+    display:flex; align-items:center; justify-content:center;
+    font-size:11px; color: var(--text-muted);
+    transition: all .2s;
+  }
+  .option.selected .opt-circle { background: var(--gold); border-color: var(--gold); color:#0E0E12; font-weight:500; }
+
+  .quiz-nav { display:flex; justify-content:flex-end; margin-top: 1.5rem; gap:1rem; }
+
+  /* ─── RESULTS ─────────────────────────── */
+  #results { padding: 80px 2rem 4rem; }
+  .results-wrap { max-width: 580px; margin: 0 auto; text-align:center; }
+  .score-ring-wrap { position:relative; width:160px; height:160px; margin: 0 auto 2rem; }
+  .score-ring { transform:rotate(-90deg); }
+  .ring-bg { fill:none; stroke: var(--deep3); stroke-width:8; }
+  .ring-fill { fill:none; stroke-width:8; stroke-linecap:round; transition: stroke-dashoffset 1.5s cubic-bezier(0.4,0,0.2,1); }
+  .score-center {
+    position:absolute; inset:0;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+  }
+  .score-pct {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem; font-weight:300;
+  }
+  .score-label { font-size:11px; color: var(--text-muted); text-transform:uppercase; letter-spacing:0.1em; }
+  .result-title { font-family: 'Cormorant Garamond', serif; font-size:2.2rem; font-weight:300; margin-bottom:1rem; }
+  .result-title em { color: var(--gold); font-style:italic; }
+  .result-msg { color: var(--text-muted); margin-bottom:2.5rem; }
+
+  /* ─── COMMUNITY ───────────────────────── */
+  #community { padding: 80px 2rem 4rem; }
+  .community-wrap { max-width: 600px; margin: 0 auto; }
+  .community-hero { text-align:center; margin-bottom: 3rem; }
+  .community-hero h2 { font-family:'Cormorant Garamond',serif; font-size:2.5rem; font-weight:300; margin-bottom:1rem; }
+  .community-hero h2 em { color:var(--gold); font-style:italic; }
+  .community-hero p { color: var(--text-muted); max-width:480px; margin: 0 auto; }
+
+  .join-form {
+    background: var(--deep2);
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius);
+    padding: 2.5rem;
+  }
+  .form-row { margin-bottom: 1.25rem; }
+  .form-row label { display:block; font-size:12px; letter-spacing:0.06em; text-transform:uppercase; color: var(--text-muted); margin-bottom:8px; }
+  .form-row input, .form-row select {
+    width:100%; background: var(--deep3);
+    border: 0.5px solid var(--border);
+    border-radius:8px;
+    padding: 12px 16px;
+    font-size:14px; color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    outline:none;
+    transition: border-color .2s;
+  }
+  .form-row input:focus, .form-row select:focus { border-color: var(--gold); }
+  .form-row select option { background: var(--deep2); }
+  .form-check { display:flex; align-items:flex-start; gap:10px; margin-bottom:1.5rem; }
+  .form-check input[type=checkbox] { accent-color: var(--gold); width:16px; height:16px; margin-top:2px; flex-shrink:0; }
+  .form-check label { font-size:13px; color: var(--text-muted); cursor:pointer; }
+  .form-success {
+    text-align:center; padding: 2rem;
+    display:none;
+  }
+  .form-success.visible { display:block; }
+  .success-icon { font-size:2.5rem; margin-bottom:1rem; }
+  .success-title { font-family:'Cormorant Garamond',serif; font-size:1.8rem; font-weight:300; margin-bottom:0.75rem; color:var(--gold); }
+  .success-msg { color:var(--text-muted); font-size:14px; }
+  .perks { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:2.5rem; }
+  .perk {
+    background: var(--deep2); border: 0.5px solid var(--border);
+    border-radius:10px; padding:1.25rem;
+  }
+  .perk-icon { font-size:1.3rem; margin-bottom:0.5rem; }
+  .perk-title { font-size:13px; font-weight:500; color:var(--text); margin-bottom:3px; }
+  .perk-desc { font-size:12px; color: var(--text-muted); }
+
+  /* ─── SIMULATION TIMER ───────────────── */
+  .sim-badge {
+    display:inline-flex; align-items:center; gap:6px;
+    background: rgba(201,168,76,0.1);
+    border: 0.5px solid var(--border);
+    border-radius:20px; padding: 4px 12px;
+    font-size:12px; color: var(--gold);
+    margin-bottom: 1rem;
+  }
+  .sim-dot { width:6px; height:6px; border-radius:50%; background: var(--gold); animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+  /* ─── SCROLLBAR ───────────────────────── */
+  ::-webkit-scrollbar { width:4px; }
+  ::-webkit-scrollbar-track { background: var(--deep); }
+  ::-webkit-scrollbar-thumb { background: var(--deep3); border-radius:2px; }
+
+  @media(max-width:600px){
+    .stats-row{gap:2rem;}
+    .perks{grid-template-columns:1fr;}
+    .modules-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Faith That Moves Mountains</div>
+  <div class="nav-links">
+    <a href="javascript:void(0)" onclick="showSection('hero')">Home</a>
+    <a href="javascript:void(0)" onclick="showSection('modules')">Training</a>
+    <a href="javascript:void(0)" onclick="tryQuiz()">Test</a>
+  </div>
+</nav>
+
+<!-- ══════════════════ HERO ══════════════════ -->
+<section id="hero" class="section active">
+  <div class="hero-orb"></div>
+  <div class="hero-tag">Jesus · The Bible · The Power of Faith</div>
+  <h1>Whatever you ask in prayer,<br><em>believe you have received it</em></h1>
+  <p class="hero-sub">A free 7-part video training series on the power of faith and the power of mind. Discover what Jesus taught about belief, thought, and how to manifest your dream life into reality — straight from Scripture.</p>
+  <div>
+    <button class="btn-primary" onclick="showSection('modules')">Start the Training</button>
+    <button class="btn-ghost" onclick="showSection('modules')">View All Lessons</button>
+  </div>
+  <div class="stats-row">
+    <div class="stat"><div class="stat-num">7</div><div class="stat-label">Video Lessons</div></div>
+    <div class="stat"><div class="stat-num">~60</div><div class="stat-label">Minutes Total</div></div>
+    <div class="stat"><div class="stat-num">15</div><div class="stat-label">Quiz Questions</div></div>
+    <div class="stat"><div class="stat-num">Mark 11:24</div><div class="stat-label">The Key Verse</div></div>
+  </div>
+</section>
+
+<!-- ══════════════════ MODULES ══════════════════ -->
+<section id="modules" class="section">
+  <div class="page-title">The Training <em>Series</em></div>
+  <p class="page-subtitle">Seven focused lessons on faith, mind, and manifestation — rooted in the words of Jesus. Watch in order to unlock the next.</p>
+  <div class="modules-grid" id="modulesGrid"></div>
+</section>
+
+<!-- ══════════════════ PLAYER ══════════════════ -->
+<section id="player" class="section">
+  <div class="player-wrap">
+    <button class="back-btn" onclick="showSection('modules')">
+      ← Back to lessons
+    </button>
+    <div class="video-box">
+      <div class="video-thumbnail" id="videoThumbnail">
+        <div class="sim-badge"><div class="sim-dot"></div> Video lesson</div>
+        <button class="play-btn-large" onclick="startVideo()">
+          <div class="play-icon"></div>
+        </button>
+        <p style="color:var(--text-muted);font-size:13px;" id="videoTitle">Loading…</p>
+      </div>
+    </div>
+    <div class="video-progress-wrap">
+      <div class="video-progress-bar" id="progressBar">
+        <div class="video-progress-fill" id="progressFill" style="width:0%"></div>
+      </div>
+      <div class="video-time">
+        <span id="timeElapsed">0:00</span>
+        <span id="timeDuration">10:00</span>
+      </div>
+    </div>
+    <div class="video-controls">
+      <span style="font-size:13px;color:var(--text-muted);flex:1;" id="ctrlStatus">Press play to begin</span>
+      <button class="ctrl-btn" id="playPauseBtn" onclick="togglePlay()">▶ Play</button>
+      <button class="ctrl-btn" onclick="skipVideo()">Skip to end →</button>
+    </div>
+    <div class="lesson-content" id="lessonContent"></div>
+    <div class="next-btn-wrap">
+      <button class="btn-primary" id="nextBtn" onclick="nextLesson()" style="display:none;">Next Lesson →</button>
+      <button class="btn-primary" id="quizBtn" onclick="showSection('quiz')" style="display:none;">Take the Final Test →</button>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ QUIZ ══════════════════ -->
+<section id="quiz" class="section">
+  <div class="quiz-wrap">
+    <div class="quiz-header">
+      <div class="page-title">Knowledge <em>Test</em></div>
+      <p class="page-subtitle" id="quizSubtitle">Answer 15 questions. You need 70% to unlock the community.</p>
+    </div>
+    <div class="progress-dots" id="progressDots"></div>
+    <div id="quizContent"></div>
+    <div class="quiz-nav" id="quizNav"></div>
+  </div>
+</section>
+
+<!-- ══════════════════ RESULTS ══════════════════ -->
+<section id="results" class="section">
+  <div class="results-wrap">
+    <div class="score-ring-wrap">
+      <svg class="score-ring" width="160" height="160" viewBox="0 0 160 160">
+        <circle class="ring-bg" cx="80" cy="80" r="68"/>
+        <circle class="ring-fill" id="ringFill" cx="80" cy="80" r="68"
+          stroke-dasharray="427.26" stroke-dashoffset="427.26"
+          stroke="var(--gold)"/>
+      </svg>
+      <div class="score-center">
+        <div class="score-pct" id="scoreDisplay">0%</div>
+        <div class="score-label">Score</div>
+      </div>
+    </div>
+    <div class="result-title" id="resultTitle">Well done</div>
+    <p class="result-msg" id="resultMsg"></p>
+    <div id="resultBtns"></div>
+  </div>
+</section>
+
+<!-- ══════════════════ COMMUNITY ══════════════════ -->
+<section id="community" class="section">
+  <div class="community-wrap">
+    <div class="community-hero">
+      <h2>Join the <em>Faith Community</em></h2>
+      <p>Connect with others who are actively walking in faith and manifesting their God-given destiny. Encourage each other, share testimonies, and stay grounded in the Word.</p>
+    </div>
+    <div class="perks">
+      <div class="perk"><div class="perk-icon">✦</div><div class="perk-title">Weekly Scripture</div><div class="perk-desc">Faith-building verses and insights in your inbox</div></div>
+      <div class="perk"><div class="perk-icon">◎</div><div class="perk-title">Testimonies</div><div class="perk-desc">Real answered-prayer stories from members</div></div>
+      <div class="perk"><div class="perk-icon">◈</div><div class="perk-title">Prayer Practice</div><div class="perk-desc">Guided exercises for praying with belief</div></div>
+      <div class="perk"><div class="perk-icon">⬡</div><div class="perk-title">Q&amp;A Sessions</div><div class="perk-desc">Monthly group sessions to strengthen your faith</div></div>
+    </div>
+    <div style="margin-top:2rem;">
+      <div class="join-form" id="joinForm">
+        <div class="form-row">
+          <label>Your First Name</label>
+          <input type="text" id="fname" placeholder="e.g. Sarah">
+        </div>
+        <div class="form-row">
+          <label>Email Address</label>
+          <input type="email" id="femail" placeholder="you@example.com">
+        </div>
+        <div class="form-row">
+          <label>What are you manifesting?</label>
+          <select id="fgoal">
+            <option value="">Select a category…</option>
+            <option>Healing &amp; health</option>
+            <option>Financial breakthrough</option>
+            <option>Restored relationship</option>
+            <option>Career &amp; purpose</option>
+            <option>Inner peace &amp; freedom from fear</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <div class="form-check">
+          <input type="checkbox" id="fagree">
+          <label for="fagree">I understand that faith means believing I have already received, and I commit to walking in faith — without doubt, without fear — trusting God for the how and when.</label>
+        </div>
+        <button class="btn-primary" style="width:100%;" onclick="submitJoin()">Join the Community</button>
+      </div>
+      <div class="form-success" id="formSuccess">
+        <div class="success-icon">✦</div>
+        <div class="success-title">Welcome to the Inner Circle</div>
+        <p class="success-msg" id="successMsg"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+// ════════════════════════════════
+//  DATA
+// ════════════════════════════════
+const lessons = [
+  {
+    id: 0,
+    title: "The Power of Faith",
+    subtitle: "The foundation of everything",
+    desc: "Jesus said it plainly: you can pray for anything, and if you have faith, you will receive it. This lesson establishes why faith is the engine of every answered prayer.",
+    duration: "7 min",
+    content: `
+      <h2>The Power of Faith</h2>
+      <p>Jesus made one of the most remarkable promises ever recorded: <em>"You can pray for anything, and if you have faith, you will receive it."</em> (Matthew 21:22). This was not a suggestion. It was a statement of how things work.</p>
+      <div class="key-insight">"Therefore I tell you, whatever you ask for in prayer, believe that you have received it, and it will be yours." — Mark 11:24 (NIV)</div>
+      <p>Notice the tense in Mark 11:24. Not "believe you will receive it." <strong>Believe you have already received it.</strong> This is the heart of the entire teaching. Faith is not hope. Faith is present-tense certainty about something not yet seen.</p>
+      <p>Every time Jesus healed someone, he pointed to the same cause: their faith.</p>
+      <ul>
+        <li><em>"Your faith has made you well."</em> — Matthew 9:22, Mark 5:34, Luke 8:48</li>
+        <li><em>"Because of your faith, it will happen."</em> — Matthew 9:29</li>
+        <li><em>"Your faith is great. Your request is granted."</em> — Matthew 15:28</li>
+        <li><em>"Anything is possible if a person believes."</em> — Mark 9:23</li>
+      </ul>
+      <p>And the opposite is equally clear. Where faith was absent, even Jesus could not work. <em>"He did not do many miracles there because of their lack of faith."</em> (Matthew 13:58). God cannot and will not work in your life without your faith. This is not harsh judgment — it is the law.</p>
+      <div class="key-insight">"Without faith it is impossible to please God." — Hebrews 11:6</div>
+    `
+  },
+  {
+    id: 1,
+    title: "What Faith Actually Is",
+    subtitle: "More than belief — it is substance",
+    desc: "Most people think faith means believing God exists. Scripture defines it very differently — faith is confident assurance about things not yet seen, operating in both mind and heart.",
+    duration: "7 min",
+    content: `
+      <h2>What Faith Actually Is</h2>
+      <div class="key-insight">"Faith is the confidence that what we hope for will actually happen; it gives us assurance about things we cannot see." — Hebrews 11:1 (NLT)</div>
+      <p>Read that carefully. Faith is <strong>confidence</strong> — not wishful thinking, not vague optimism. A settled knowing in the mind and heart that what is hoped for <em>will actually happen.</em></p>
+      <p>Simply believing God exists is not faith. Even the demons believe that (James 2:19). True faith is believing — completely, without wavering — every word that Jesus spoke.</p>
+      <p>Faith has two inseparable parts:</p>
+      <ul>
+        <li><strong>In the mind:</strong> You hold the reality of your desire as already true. You think from it, speak from it, see from it.</li>
+        <li><strong>In the heart:</strong> You feel the assurance of it. There is no anxiety, no grasping — only settled peace.</li>
+      </ul>
+      <p>This is exactly what Jesus described in Mark 11:23: <em>"Truly I tell you, if anyone says to this mountain, 'Go, throw yourself into the sea,' and does not doubt in their heart but believes that what they say will happen, it will be done for them."</em></p>
+      <p>The mountain does not move because of loud words. It moves because of a heart without doubt — a mind fully convinced of the reality of the unseen. That is faith. Jesus said it can move mountains.</p>
+    `
+  },
+  {
+    id: 2,
+    title: "Doubt & Fear: The Faith Killers",
+    subtitle: "Why doubt sinks you — literally",
+    desc: "Peter walked on water until he doubted. Jesus asked: 'Why did you doubt?' Doubt and fear are not just emotions — they are the direct opposite of faith and they cancel your prayers.",
+    duration: "7 min",
+    content: `
+      <h2>Doubt &amp; Fear: The Faith Killers</h2>
+      <div class="key-insight">"But when you ask, you must believe and not doubt, because the one who doubts is like a wave of the sea, blown and tossed by the wind. That person should not expect to receive anything from the Lord. Such a person is double-minded and unstable in all they do." — James 1:6-8</div>
+      <p>That is unambiguous. A person who wavers should not expect to receive anything. Not "a little less." Nothing. Doubt does not reduce your faith — it cancels it.</p>
+      <p>Peter's story is the perfect illustration. He stepped out of the boat and walked on water. As long as his mind held the reality of what was happening — it worked. The moment he saw the wind and waves and doubted, he began to sink. Jesus said: <em>"You of little faith — why did you doubt?"</em> (Matthew 14:31). The storm was real. But the doubt was the problem.</p>
+      <p><strong>Fear is doubt in disguise.</strong> If you are afraid, you are not believing. Fear and faith cannot occupy the same heart at the same time.</p>
+      <ul>
+        <li><em>"Don't be afraid; just believe."</em> — Mark 5:36</li>
+        <li><em>"Do not let your hearts be troubled and do not be afraid."</em> — John 14:27</li>
+        <li><em>"Don't worry about anything; instead, pray about everything."</em> — Philippians 4:6</li>
+        <li><em>"Why are you so afraid? Do you still have no faith?"</em> — Mark 4:40</li>
+      </ul>
+      <p>When fear or worry arise, you now know exactly what is happening: your faith needs renewing. Catch it. Return to prayer. Redirect your mind to what God has already promised. Faith can always be renewed.</p>
+    `
+  },
+  {
+    id: 3,
+    title: "Believe You Have Already Received",
+    subtitle: "The present-tense secret of Mark 11:24",
+    desc: "The key verse of this entire series. Jesus instructs us to pray believing it is already done — not hoping it will come, but convinced it is already yours. This single shift changes everything.",
+    duration: "8 min",
+    content: `
+      <h2>Believe You Have Already Received</h2>
+      <div class="key-insight">"Therefore I tell you, whatever you ask for in prayer, believe that you have received it, and it will be yours." — Mark 11:24 (NIV)</div>
+      <p>Let's break this down word by word.</p>
+      <p><strong>"Whatever you ask for in prayer"</strong> — No limitation. Relationship, health, finances, peace, purpose. Whatever.</p>
+      <p><strong>"Believe that you have received it"</strong> — Not "believe you will receive it someday." Past tense. Already received. In the inner world of your mind and heart — it is already done. You are not waiting for it to happen. You are acknowledging it has already happened in the invisible realm.</p>
+      <p><strong>"And it will be yours"</strong> — The outer, visible world will catch up. The physical manifestation follows the inner conviction. Always.</p>
+      <p><strong>How to pray this way in practice:</strong></p>
+      <ul>
+        <li>Take your specific need before God in prayer</li>
+        <li>Instead of begging or pleading, <em>thank</em> God — as if it is already done</li>
+        <li>See it as already accomplished in your mind. Feel the gratitude of it.</li>
+        <li>Release the how and when completely — that is God's part, not yours</li>
+        <li>Walk away from prayer in peace, not anxiety. Peace is proof of faith.</li>
+      </ul>
+      <p>God always works this way. Jesus thanked the Father <em>before</em> Lazarus came out of the tomb (John 11:41). The ten lepers were healed <em>as they went</em> — not before they moved in faith (Luke 17:14). God told Joshua the battle was already won before a single step was taken (Joshua 10:8). The confirmation follows faith — always.</p>
+    `
+  },
+  {
+    id: 4,
+    title: "The Feeling of Faith: Gratitude & Love",
+    subtitle: "High-frequency states that activate prayer",
+    desc: "Faith is not just a thought — it is a feeling. Gratitude and love are the highest spiritual states. Resentment and anger block God's work. Forgiveness is not optional — it is a requirement.",
+    duration: "8 min",
+    content: `
+      <h2>The Feeling of Faith: Gratitude &amp; Love</h2>
+      <div class="key-insight">"Rejoice always, pray continually, give thanks in all circumstances; for this is God's will for you in Christ Jesus." — 1 Thessalonians 5:16-18</div>
+      <p>The instruction is not "give thanks when things are going well." It is <em>in all circumstances</em> — including situations that haven't turned around yet. This is advanced faith: thanking God for the answer before you see it. It is the spirit of Mark 11:24 — believe you have already received.</p>
+      <p><strong>Gratitude is the frequency of faith.</strong> When you are genuinely grateful, you are operating from the assumption that good has already come. That is the same inner posture as believing you have already received.</p>
+      <p><strong>Love is the highest creative state.</strong> God is love (1 John 4:8). To operate in love — toward God, others, and yourself — is to align completely with the source of all good things.</p>
+      <p><strong>Fear, anger, and resentment block faith.</strong> They broadcast the inner state of lack and separation — the opposite of the trusting, peace-filled posture that faith requires. In that state, God cannot work (Matthew 13:58).</p>
+      <div class="key-insight">"And when you stand praying, if you hold anything against anyone, forgive them, so that your Father in heaven may also forgive you your sins." — Mark 11:25</div>
+      <p>Jesus said this <em>immediately after</em> Mark 11:24. Forgiveness is not a moral extra — it is a condition for answered prayer. Holding resentment keeps you locked in a state of unbelief. Forgiveness is not saying what happened was okay. It is releasing the toxic charge so you are free to stand in faith again. You cannot rise to the frequency of love and gratitude while carrying the weight of resentment.</p>
+      <ul>
+        <li>Before prayer — release resentment. Forgive anyone who needs forgiving, including yourself.</li>
+        <li>Enter genuine gratitude — feel it for what you already have</li>
+        <li>From that state of love and gratitude — bring your request to God as already answered</li>
+        <li>Stay in peace. Peace is the evidence that faith is working.</li>
+      </ul>
+    `
+  },
+  {
+    id: 5,
+    title: "Renew Your Mind",
+    subtitle: "Your thoughts shape your world",
+    desc: "As a man thinks in his heart, so is he. Your dominant inner beliefs shape your reality. Learn to renew your mind to your true identity in Christ — and watch your outer world follow.",
+    duration: "7 min",
+    content: `
+      <h2>Renew Your Mind</h2>
+      <div class="key-insight">"As a man thinks in his heart, so is he." — Proverbs 23:7</div>
+      <p>One of the oldest statements in Scripture confirms what modern neuroscience now proves: your dominant thoughts and inner beliefs shape your perception, your behavior, and ultimately your circumstances.</p>
+      <p>Paul's instruction in Romans 12:2 is the practical application: <em>"Do not conform to the pattern of this world, but be transformed by the renewing of your mind."</em> Transformation does not start with circumstances. It starts with the mind.</p>
+      <p>Philippians 4:8 gives us the exact content our minds should dwell on: <em>"Whatever is true, whatever is noble, whatever is right, whatever is pure, whatever is lovely, whatever is admirable — think about such things."</em> This is an active, daily choice about what occupies your inner world.</p>
+      <p><strong>What you believe about yourself is the root of your life.</strong> If you believe you are unworthy, unloved, or cursed with bad luck, that belief will be confirmed by your experience. But the Bible declares the truth about who you are:</p>
+      <ul>
+        <li>You are made in the image of God — Genesis 1:27</li>
+        <li>You are loved unconditionally — John 3:16</li>
+        <li>You are more than a conqueror — Romans 8:37</li>
+        <li>You can do all things through Christ who strengthens you — Philippians 4:13</li>
+      </ul>
+      <p>When you renew your mind to your true identity in Christ — when that becomes your core belief — your outer life begins to reflect it. Not because you manipulated anything, but because you aligned with the truth of who God says you are.</p>
+      <div class="key-insight">"For God has not given us a spirit of fear, but of power and of love and of a sound mind." — 2 Timothy 1:7</div>
+    `
+  },
+  {
+    id: 6,
+    title: "Living in Faith — The Daily Practice",
+    subtitle: "How to walk it out every day",
+    desc: "Everything comes together here. A simple daily practice: pray with belief, stay in peace, release the how and when to God, guard your mind, walk in gratitude — and watch God move.",
+    duration: "8 min",
+    content: `
+      <h2>Living in Faith — The Daily Practice</h2>
+      <p>Faith is not a one-time event. It is a daily posture — a way of moving through life in the settled confidence that God is working, your prayers are already answered, and the outer world will catch up.</p>
+      <div class="key-insight">"Therefore I tell you, whatever you ask for in prayer, believe that you have received it, and it will be yours." — Mark 11:24 (NIV)</div>
+      <p><strong>Your part and God's part — clearly separated:</strong></p>
+      <ul>
+        <li><strong>Your part:</strong> Believe it is already done. Stay in faith. Do not doubt, fear, or waver.</li>
+        <li><strong>God's part:</strong> How it will happen. When it will happen. The path, the timing, the people. Release this completely — do not tell God how or when.</li>
+      </ul>
+      <p>God told Joshua the battle was already won before a step was taken (Joshua 10:8). He told Gideon to go — the victory was already given (Judges 7:9). He told Samuel to stop mourning — He had already chosen the next king (1 Samuel 16:1). Faith first. Physical confirmation follows.</p>
+      <p><strong>Morning practice:</strong></p>
+      <ul>
+        <li>Before checking your phone — spend 2 minutes in genuine gratitude</li>
+        <li>Pray over your specific need, thanking God as if it is already done</li>
+        <li>Speak your identity in Christ aloud — renew your mind first thing</li>
+      </ul>
+      <p><strong>Through the day:</strong></p>
+      <ul>
+        <li>When fear or doubt arise — catch it, redirect immediately to prayer</li>
+        <li><em>"Don't worry about anything; instead, pray about everything."</em> — Philippians 4:6</li>
+        <li>Stay in peace. Peace is not the absence of problems — it is the presence of faith.</li>
+      </ul>
+      <p><strong>Evening:</strong></p>
+      <ul>
+        <li>Release resentment from the day. Forgive. Go to sleep unburdened.</li>
+        <li>End in gratitude — feel it for what you have and for what is already on its way.</li>
+      </ul>
+      <div class="key-insight">"And the peace of God, which transcends all understanding, will guard your hearts and your minds in Christ Jesus." — Philippians 4:7</div>
+      <p>This peace is the fruit of faith. When you have it, you know your prayer has been received. When it is absent, return to the practice. Pray. Release. Trust. And watch God move.</p>
+    `
+  }
+];
+
+const quizQuestions = [
+  {
+    q: "What did Jesus promise in Matthew 21:22 about prayer and faith?",
+    options: ["God will answer prayers on His timeline only","You can pray for anything and if you have faith you will receive it","Prayer only works for spiritual matters","Faith is required only for healing"],
+    correct: 1
+  },
+  {
+    q: "According to Hebrews 11:1 (NLT), what is faith?",
+    options: ["Believing that God exists","Attending church regularly","The confidence that what we hope for will actually happen; assurance about things we cannot see","A feeling of hope about the future"],
+    correct: 2
+  },
+  {
+    q: "What is the key instruction in Mark 11:24 (NIV)?",
+    options: ["Ask God repeatedly until He answers","Believe that you will receive your request someday","Believe that you have already received it, and it will be yours","Fast and pray for 40 days"],
+    correct: 2
+  },
+  {
+    q: "According to Hebrews 11:6, what is impossible without faith?",
+    options: ["Reading the Bible","Pleasing God","Going to heaven","Praying effectively"],
+    correct: 1
+  },
+  {
+    q: "What happened to Peter when he doubted while walking on water?",
+    options: ["He was immediately rescued by an angel","He walked faster","He began to sink","Nothing — he kept walking"],
+    correct: 2
+  },
+  {
+    q: "According to James 1:6-8, what should a doubting person NOT expect?",
+    options: ["A long wait for their prayer","To receive anything from the Lord","To understand Scripture","To be forgiven"],
+    correct: 1
+  },
+  {
+    q: "In Mark 11:24, when should you believe you have received your request?",
+    options: ["After you see physical evidence","Only after fasting","While praying — before you see it physically","When a pastor confirms it"],
+    correct: 2
+  },
+  {
+    q: "According to Matthew 13:58, why could Jesus not do miracles in his hometown?",
+    options: ["He was tired","The people lacked faith","It was not God's timing","He chose not to"],
+    correct: 1
+  },
+  {
+    q: "According to 1 Thessalonians 5:16-18, when should we give thanks to God?",
+    options: ["Only when things go well","On Sundays and holidays","In all circumstances","After prayers are answered"],
+    correct: 2
+  },
+  {
+    q: "Why is forgiveness mentioned immediately after Mark 11:24 (in Mark 11:25)?",
+    options: ["It is a separate topic","Holding resentment blocks faith and answered prayer","Forgiveness earns extra blessings","It was only relevant for that audience"],
+    correct: 1
+  },
+  {
+    q: "What does Proverbs 23:7 say about a man's thoughts?",
+    options: ["Thoughts are less important than actions","As a man thinks in his heart, so is he","Only spoken words create reality","God does not consider our thoughts"],
+    correct: 1
+  },
+  {
+    q: "According to Romans 12:2, transformation begins with what?",
+    options: ["Working harder","Changing your circumstances first","The renewing of your mind","Joining a community"],
+    correct: 2
+  },
+  {
+    q: "What is your role versus God's role in answered prayer, according to these teachings?",
+    options: ["You plan every step; God approves","Your role is to believe it is already done; God's role is the how and when","God does everything; you do nothing","You must earn it through good works; God rewards you"],
+    correct: 1
+  },
+  {
+    q: "According to 2 Timothy 1:7, what has God given us?",
+    options: ["A spirit of caution and patience","A spirit of fear and humility","A spirit of power, love, and a sound mind","A spirit of waiting and endurance"],
+    correct: 2
+  },
+  {
+    q: "What does the peace described in Philippians 4:7 indicate in the context of faith?",
+    options: ["That you have stopped caring about the situation","That your prayer has been received and faith is working","That God has said no","That you need to pray more"],
+    correct: 1
+  }
+];
+
+// ════════════════════════════════
+//  STATE
+// ════════════════════════════════
+let state = {
+  completedLessons: JSON.parse(localStorage.getItem('ftm_completed') || '[]'),
+  currentLesson: 0,
+  quizAnswers: {},
+  quizScore: 0,
+  passed: false,
+  videoPlaying: false,
+  videoProgress: 0,
+  videoTimer: null,
+};
+
+// ════════════════════════════════
+//  NAVIGATION
+// ════════════════════════════════
+function showSection(id) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo({top: 0, left: 0, behavior: 'instant'});
+  document.documentElement.scrollTop = 0;
+  document.body.scrollTop = 0;
+  if (id === 'modules') renderModules();
+  if (id === 'quiz') initQuiz();
+  if (id === 'results') showResults();
+}
+
+function tryQuiz() {
+  if (state.completedLessons.length < lessons.length) {
+    alert('Please complete all 7 video lessons before taking the test.');
+  } else {
+    showSection('quiz');
+  }
+}
+
+// ════════════════════════════════
+//  MODULES
+// ════════════════════════════════
+function renderModules() {
+  const grid = document.getElementById('modulesGrid');
+  grid.innerHTML = '';
+  lessons.forEach((l, i) => {
+    const done = state.completedLessons.includes(i);
+    const locked = i > 0 && !state.completedLessons.includes(i-1) && !done;
+    const card = document.createElement('div');
+    card.className = 'module-card' + (done ? ' completed' : '') + (locked ? ' locked' : '');
+    card.innerHTML = `
+      <div class="module-num">0${i+1}</div>
+      <div class="module-title">${l.title}</div>
+      <div class="module-desc">${l.desc}</div>
+      <div class="module-meta">
+        <span class="badge ${done ? 'done' : locked ? 'locked-badge' : ''}">${done ? '✓ Done' : locked ? 'Locked' : 'Watch'}</span>
+        <span class="duration">${l.duration}</span>
+      </div>
+    `;
+    if (!locked) {
+      card.onclick = () => openLesson(i);
+    }
+    grid.appendChild(card);
+  });
+  // After all lessons, show quiz button
+  if (state.completedLessons.length >= lessons.length) {
+    const btn = document.createElement('div');
+    btn.style.cssText = 'grid-column:1/-1;text-align:center;padding:2rem 0;';
+    btn.innerHTML = `<button class="btn-primary" onclick="showSection('quiz')">Take the Final Test →</button>`;
+    grid.appendChild(btn);
+  }
+}
+
+// ════════════════════════════════
+//  VIDEO PLAYER
+// ════════════════════════════════
+function openLesson(idx) {
+  state.currentLesson = idx;
+  state.videoPlaying = false;
+  state.videoProgress = 0;
+  clearInterval(state.videoTimer);
+  const l = lessons[idx];
+  document.getElementById('videoTitle').textContent = `Lesson ${idx+1}: ${l.title}`;
+  document.getElementById('progressFill').style.width = '0%';
+  document.getElementById('timeElapsed').textContent = '0:00';
+  document.getElementById('timeDuration').textContent = '10:00';
+  document.getElementById('ctrlStatus').textContent = 'Press play to begin';
+  document.getElementById('playPauseBtn').textContent = '▶ Play';
+  document.getElementById('playPauseBtn').classList.remove('active-ctrl');
+  document.getElementById('lessonContent').innerHTML = l.content;
+  document.getElementById('nextBtn').style.display = 'none';
+  document.getElementById('quizBtn').style.display = 'none';
+  document.getElementById('videoThumbnail').style.display = 'flex';
+  showSection('player');
+}
+
+function startVideo() {
+  document.getElementById('videoThumbnail').style.display = 'none';
+  beginPlayback();
+}
+
+function beginPlayback() {
+  state.videoPlaying = true;
+  document.getElementById('playPauseBtn').textContent = '⏸ Pause';
+  document.getElementById('playPauseBtn').classList.add('active-ctrl');
+  document.getElementById('ctrlStatus').textContent = 'Now playing…';
+  const totalSecs = 600;
+  state.videoTimer = setInterval(() => {
+    if (!state.videoPlaying) return;
+    state.videoProgress = Math.min(state.videoProgress + (100/totalSecs), 100);
+    const elapsed = Math.round((state.videoProgress/100)*totalSecs);
+    const m = Math.floor(elapsed/60);
+    const s = elapsed%60;
+    document.getElementById('progressFill').style.width = state.videoProgress + '%';
+    document.getElementById('timeElapsed').textContent = `${m}:${s.toString().padStart(2,'0')}`;
+    if (state.videoProgress >= 100) {
+      clearInterval(state.videoTimer);
+      markComplete();
+    }
+  }, 100);
+}
+
+function togglePlay() {
+  if (state.videoProgress === 0 && !state.videoPlaying) { beginPlayback(); return; }
+  state.videoPlaying = !state.videoPlaying;
+  const btn = document.getElementById('playPauseBtn');
+  if (state.videoPlaying) {
+    btn.textContent = '⏸ Pause'; btn.classList.add('active-ctrl');
+    document.getElementById('ctrlStatus').textContent = 'Now playing…';
+  } else {
+    btn.textContent = '▶ Play'; btn.classList.remove('active-ctrl');
+    document.getElementById('ctrlStatus').textContent = 'Paused';
+  }
+}
+
+function skipVideo() {
+  clearInterval(state.videoTimer);
+  state.videoProgress = 100;
+  document.getElementById('progressFill').style.width = '100%';
+  document.getElementById('timeElapsed').textContent = '10:00';
+  markComplete();
+}
+
+function markComplete() {
+  state.videoPlaying = false;
+  document.getElementById('playPauseBtn').textContent = '✓ Done';
+  document.getElementById('playPauseBtn').classList.add('active-ctrl');
+  document.getElementById('ctrlStatus').textContent = 'Lesson complete!';
+  if (!state.completedLessons.includes(state.currentLesson)) {
+    state.completedLessons.push(state.currentLesson);
+    localStorage.setItem('ftm_completed', JSON.stringify(state.completedLessons));
+  }
+  const isLast = state.currentLesson >= lessons.length - 1;
+  if (isLast) {
+    document.getElementById('quizBtn').style.display = 'inline-block';
+  } else {
+    document.getElementById('nextBtn').style.display = 'inline-block';
+  }
+}
+
+function nextLesson() {
+  openLesson(state.currentLesson + 1);
+}
+
+// ════════════════════════════════
+//  QUIZ
+// ════════════════════════════════
+let quizCurrent = 0;
+
+function initQuiz() {
+  quizCurrent = 0;
+  state.quizAnswers = {};
+  renderQuizQuestion();
+}
+
+function renderQuizQuestion() {
+  const q = quizQuestions[quizCurrent];
+  // Dots
+  const dots = document.getElementById('progressDots');
+  dots.innerHTML = '';
+  quizQuestions.forEach((_, i) => {
+    const d = document.createElement('div');
+    d.className = 'dot' + (state.quizAnswers[i] !== undefined ? ' answered' : '') + (i===quizCurrent ? ' current' : '');
+    dots.appendChild(d);
+  });
+  // Question
+  document.getElementById('quizContent').innerHTML = `
+    <div class="q-card">
+      <div class="q-num">Question ${quizCurrent+1} of ${quizQuestions.length}</div>
+      <div class="q-text">${q.q}</div>
+      <div class="options">
+        ${q.options.map((o,i)=>`
+          <div class="option ${state.quizAnswers[quizCurrent]===i?'selected':''}" onclick="selectAnswer(${i})" id="opt_${i}">
+            <div class="opt-circle">${String.fromCharCode(65+i)}</div>
+            <span>${o}</span>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `;
+  // Nav
+  const nav = document.getElementById('quizNav');
+  const isLast = quizCurrent === quizQuestions.length - 1;
+  nav.innerHTML = `
+    ${quizCurrent > 0 ? `<button class="ctrl-btn" onclick="quizPrev()">← Back</button>` : ''}
+    ${!isLast ? `<button class="btn-primary" onclick="quizNext()" ${state.quizAnswers[quizCurrent]===undefined?'disabled style="opacity:0.5"':''}>Next →</button>` : ''}
+    ${isLast ? `<button class="btn-primary" onclick="submitQuiz()" ${state.quizAnswers[quizCurrent]===undefined?'disabled style="opacity:0.5"':''}>Submit Test</button>` : ''}
+  `;
+}
+
+function selectAnswer(idx) {
+  state.quizAnswers[quizCurrent] = idx;
+  renderQuizQuestion();
+}
+
+function quizNext() {
+  if (state.quizAnswers[quizCurrent] === undefined) return;
+  quizCurrent++;
+  renderQuizQuestion();
+}
+
+function quizPrev() {
+  quizCurrent--;
+  renderQuizQuestion();
+}
+
+function submitQuiz() {
+  let correct = 0;
+  quizQuestions.forEach((q,i) => {
+    if (state.quizAnswers[i] === q.correct) correct++;
+  });
+  state.quizScore = Math.round((correct / quizQuestions.length) * 100);
+  state.passed = state.quizScore >= 70;
+  showSection('results');
+}
+
+// ════════════════════════════════
+//  RESULTS
+// ════════════════════════════════
+function showResults() {
+  const pct = state.quizScore;
+  const passed = state.passed;
+  // Animate ring
+  const circ = 427.26;
+  const offset = circ - (circ * pct / 100);
+  const ring = document.getElementById('ringFill');
+  ring.style.stroke = passed ? 'var(--gold)' : '#E24B4A';
+  setTimeout(() => { ring.style.strokeDashoffset = offset; }, 100);
+  document.getElementById('scoreDisplay').textContent = pct + '%';
+  document.getElementById('resultTitle').innerHTML = passed
+    ? `Your faith is <em>grounded</em>`
+    : `Almost there — keep pressing in`;
+  document.getElementById('resultMsg').textContent = passed
+    ? `Well done. You scored ${pct}% — you have internalized the core principles of faith and the power of the mind. You are ready to join the community.`
+    : `You scored ${pct}%. You need 70% to unlock the community. Review the lessons and try again — every revisit deepens your understanding.`;
+  document.getElementById('resultBtns').innerHTML = passed
+    ? `<button class="btn-primary" onclick="showSection('community')">Join the Community →</button>`
+    : `<button class="btn-primary" onclick="showSection('quiz')">Retake the Test</button>
+       <button class="btn-ghost" onclick="showSection('modules')">Review Lessons</button>`;
+}
+
+// ════════════════════════════════
+//  COMMUNITY FORM
+// ════════════════════════════════
+function submitJoin() {
+  const name = document.getElementById('fname').value.trim();
+  const email = document.getElementById('femail').value.trim();
+  const goal = document.getElementById('fgoal').value;
+  const agree = document.getElementById('fagree').checked;
+  if (!name || !email || !goal || !agree) {
+    alert('Please fill in all fields and check the commitment box.');
+    return;
+  }
+  if (!email.includes('@')) { alert('Please enter a valid email address.'); return; }
+  document.getElementById('joinForm').style.display = 'none';
+  const success = document.getElementById('formSuccess');
+  success.classList.add('visible');
+  document.getElementById('successMsg').textContent =
+    `Welcome, ${name}! You'll receive your first email at ${email} shortly. You're now part of a community of believers who are walking in faith and manifesting their God-given destiny through the power of prayer and a renewed mind.`;
+}
+
+// ════════════════════════════════
+//  INIT
+// ════════════════════════════════
+renderModules();
+</script>
+</body>
+</html>
